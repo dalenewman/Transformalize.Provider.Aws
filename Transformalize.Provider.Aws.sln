@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transform", "Transform", "{F30711B2-1C85-447E-A721-A073B1DCAF98}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transform.Autofac", "Transform.Autofac", "{6B1D0B99-08ED-4B1B-BFB9-A24D5C8628EC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Transform.Aws.Standard.20", "src\Transformalize.Transform.Aws.Standard.20\Transformalize.Transform.Aws.Standard.20.csproj", "{2A6CDED0-68BD-4B8A-AFB3-508C26872B50}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Transform.Aws.Autofac.Standard.20", "src\Transformalize.Transform.Aws.Autofac.Standard.20\Transformalize.Transform.Aws.Autofac.Standard.20.csproj", "{62ECEBCB-6A56-4281-A465-B11A5E3CC10F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{C5B7653D-BBA3-495E-AF0F-068258A00DEB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Unit", "src\Test.Unit\Test.Unit.csproj", "{805BA11C-06DE-4135-9152-26A2DB3B94CD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DF7C454C-95CC-4C4B-A2D6-ABADB6F7AE2D}"
+	ProjectSection(SolutionItems) = preProject
+		readme.md = readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A6CDED0-68BD-4B8A-AFB3-508C26872B50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A6CDED0-68BD-4B8A-AFB3-508C26872B50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A6CDED0-68BD-4B8A-AFB3-508C26872B50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A6CDED0-68BD-4B8A-AFB3-508C26872B50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62ECEBCB-6A56-4281-A465-B11A5E3CC10F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62ECEBCB-6A56-4281-A465-B11A5E3CC10F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62ECEBCB-6A56-4281-A465-B11A5E3CC10F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62ECEBCB-6A56-4281-A465-B11A5E3CC10F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{805BA11C-06DE-4135-9152-26A2DB3B94CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{805BA11C-06DE-4135-9152-26A2DB3B94CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{805BA11C-06DE-4135-9152-26A2DB3B94CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{805BA11C-06DE-4135-9152-26A2DB3B94CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2A6CDED0-68BD-4B8A-AFB3-508C26872B50} = {F30711B2-1C85-447E-A721-A073B1DCAF98}
+		{62ECEBCB-6A56-4281-A465-B11A5E3CC10F} = {6B1D0B99-08ED-4B1B-BFB9-A24D5C8628EC}
+		{805BA11C-06DE-4135-9152-26A2DB3B94CD} = {C5B7653D-BBA3-495E-AF0F-068258A00DEB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3993894C-D8F0-4ED6-87A0-B81D75C6B277}
+	EndGlobalSection
+EndGlobal
