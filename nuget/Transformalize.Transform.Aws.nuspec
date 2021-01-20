@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+   <metadata>
+      <id>Transformalize.Transform.Aws</id>
+      <version>0.8.33-beta</version>
+      <title>AWS transforms for Transformalize</title>
+      <authors>Dale Newman</authors>
+      <owners>Dale Newman</owners>
+      <projectUrl>https://github.com/dalenewman/Transformalize.Provider.Aws</projectUrl>
+      <license type="expression">Apache-2.0</license>
+      <requireLicenseAcceptance>false</requireLicenseAcceptance>
+      <description>AWS transforms for Transformalize</description>
+      <releaseNotes>initial beta release</releaseNotes>
+      <copyright>Copyright 2021</copyright>
+      <tags>etl</tags>
+      <dependencies>
+         <group targetFramework="netstandard2.0">
+            <dependency id="Transformalize" version="0.8.32-beta" />
+            <dependency id="AWSSDK.SecurityToken" version="3.5.1.41" />
+         </group>
+      </dependencies>
+   </metadata>
+   <files>
+      <file src="..\src\Transformalize.Transform.Aws.Standard.20\bin\Debug\netstandard2.0\Transformalize.Transform.Aws.deps.json" target="lib\netstandard2.0\Transformalize.Transform.Aws.deps.json" />
+      <file src="..\src\Transformalize.Transform.Aws.Standard.20\bin\Debug\netstandard2.0\Transformalize.Transform.Aws.dll" target="lib\netstandard2.0\Transformalize.Transform.Aws.dll" />
+      <file src="..\src\Transformalize.Transform.Aws.Standard.20\bin\Debug\netstandard2.0\Transformalize.Transform.Aws.pdb" target="lib\netstandard2.0\Transformalize.Transform.Aws.pdb" />
+   </files>
+</package>

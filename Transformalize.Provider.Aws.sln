@@ -20,6 +20,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		readme.md = readme.md
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{AD82B92C-BEAC-448F-8BEC-B0E9FAFB90B6}"
+	ProjectSection(SolutionItems) = preProject
+		nuget\myget.bat = nuget\myget.bat
+		nuget\nuget.bat = nuget\nuget.bat
+		nuget\Transformalize.Transform.Aws.Autofac.nuspec = nuget\Transformalize.Transform.Aws.Autofac.nuspec
+		nuget\Transformalize.Transform.Aws.nuspec = nuget\Transformalize.Transform.Aws.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +54,7 @@ Global
 		{2A6CDED0-68BD-4B8A-AFB3-508C26872B50} = {F30711B2-1C85-447E-A721-A073B1DCAF98}
 		{62ECEBCB-6A56-4281-A465-B11A5E3CC10F} = {6B1D0B99-08ED-4B1B-BFB9-A24D5C8628EC}
 		{805BA11C-06DE-4135-9152-26A2DB3B94CD} = {C5B7653D-BBA3-495E-AF0F-068258A00DEB}
+		{AD82B92C-BEAC-448F-8BEC-B0E9FAFB90B6} = {DF7C454C-95CC-4C4B-A2D6-ABADB6F7AE2D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3993894C-D8F0-4ED6-87A0-B81D75C6B277}
