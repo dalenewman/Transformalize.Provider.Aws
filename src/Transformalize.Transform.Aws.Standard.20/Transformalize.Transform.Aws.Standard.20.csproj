@@ -1,15 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Transformalize.Transforms.Aws</RootNamespace>
     <AssemblyName>Transformalize.Transform.Aws</AssemblyName>
-    <Version>0.8.33-beta</Version>
+    <Version>0.8.35-beta</Version>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="AWSSDK.SecurityToken" Version="3.5.1.41" />
-    <PackageReference Include="Transformalize" Version="0.8.32-beta" />
+    <PackageReference Include="Transformalize" Version="0.8.35-beta" />
   </ItemGroup>
-
 </Project>

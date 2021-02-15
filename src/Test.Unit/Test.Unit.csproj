@@ -15,6 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Transformalize.Provider.Aws.CloudWatch.Autofac\Transformalize.Provider.Aws.CloudWatch.Autofac.csproj" />
+    <ProjectReference Include="..\Transformalize.Provider.Aws.CloudWatch\Transformalize.Provider.Aws.CloudWatch.csproj" />
     <ProjectReference Include="..\Transformalize.Transform.Aws.Autofac.Standard.20\Transformalize.Transform.Aws.Autofac.Standard.20.csproj" />
     <ProjectReference Include="..\Transformalize.Transform.Aws.Standard.20\Transformalize.Transform.Aws.Standard.20.csproj" />
   </ItemGroup>

@@ -4,8 +4,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Transformalize.Configuration;
 using Transformalize.Containers.Autofac;
 using Transformalize.Contracts;
+using Transformalize.Providers.Aws.CloudWatch.Autofac;
 using Transformalize.Providers.Console;
-using Transformalize.Transforms.Aws.Autofac;
 
 namespace Test.Unit {
 
@@ -14,36 +14,36 @@ namespace Test.Unit {
    /// Visual Studio.
    /// </summary>
    [TestClass]
-   public class Test {
+   public class CloudWatchDescribeLogGroups {
       [TestMethod]
       public void TestMethod1() {
          var cfg = @"<cfg name='test'>
+   <connections>
+      <add name='input' provider='aws' service='logs' command='DescribeLogGroups' />
+   </connections>
    <entities>
       <add name='entity'>
-         <rows>
-            <add key='1' />
-         </rows>
          <fields>
-            <add name='key' type='int' primary-key='true' />
+            <add name='arn' primary-key='true' />
+            <add name='creationTime' type='datetime' />
+            <add name='kmsKeyId' length='256' />
+            <add name='logGroupName' length='512' />
+            <add name='metricFilterCount' type='int' />
+            <add name='retentionInDays' type='int' />
+            <add name='storedBytes' type='long' />
          </fields>
-         <calculated-fields>
-            <add name='calleridentity' t='stsgetcalleridentity()' length='255' />
-         </calculated-fields>
       </add>
    </entities>
 </cfg>";
          var logger = new ConsoleLogger(LogLevel.Debug);
-         using (var outer = new ConfigurationContainer(new AwsTransformModule()).CreateScope(cfg, logger)) {
+         using (var outer = new ConfigurationContainer().CreateScope(cfg, logger)) {
             var process = outer.Resolve<Process>();
-            using (var inner = new Container(new AwsTransformModule()).CreateScope(process, logger)) {
+            using (var inner = new Container(new AwsCloudWatchProviderModule(process)).CreateScope(process, logger)) {
+               
                var controller = inner.Resolve<IProcessController>();
                IRow[] rows = controller.Read().ToArray();
 
-               Assert.AreEqual(1, rows.Length);
-               var value = rows[0][process.Entities[0].CalculatedFields[0]].ToString();
-               Assert.AreNotEqual(string.Empty, value);
-               Assert.AreEqual("{\"Account\"", value.Substring(0, 10));
-
+               Assert.AreNotEqual(0, rows.Count());
             }
          }
       }

@@ -24,9 +24,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{AD82B92C
 	ProjectSection(SolutionItems) = preProject
 		nuget\myget.bat = nuget\myget.bat
 		nuget\nuget.bat = nuget\nuget.bat
+		nuget\Transformalize.Provider.Aws.CloudWatch.Autofac.nuspec = nuget\Transformalize.Provider.Aws.CloudWatch.Autofac.nuspec
+		nuget\Transformalize.Provider.Aws.CloudWatch.nuspec = nuget\Transformalize.Provider.Aws.CloudWatch.nuspec
 		nuget\Transformalize.Transform.Aws.Autofac.nuspec = nuget\Transformalize.Transform.Aws.Autofac.nuspec
 		nuget\Transformalize.Transform.Aws.nuspec = nuget\Transformalize.Transform.Aws.nuspec
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Provider", "Provider", "{DAE4CDF1-5F43-4E76-8A02-73DEE16345FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Provider.Autofac", "Provider.Autofac", "{9BC27955-2461-4029-B789-1321A2F73EFF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Provider.Aws.CloudWatch.Autofac", "src\Transformalize.Provider.Aws.CloudWatch.Autofac\Transformalize.Provider.Aws.CloudWatch.Autofac.csproj", "{EC82AB6F-41DB-4E7A-82B0-AAD553BACC92}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Provider.Aws.CloudWatch", "src\Transformalize.Provider.Aws.CloudWatch\Transformalize.Provider.Aws.CloudWatch.csproj", "{BF30CD57-0399-4F52-AD96-CD49D067F98B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +56,14 @@ Global
 		{805BA11C-06DE-4135-9152-26A2DB3B94CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{805BA11C-06DE-4135-9152-26A2DB3B94CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{805BA11C-06DE-4135-9152-26A2DB3B94CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC82AB6F-41DB-4E7A-82B0-AAD553BACC92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC82AB6F-41DB-4E7A-82B0-AAD553BACC92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC82AB6F-41DB-4E7A-82B0-AAD553BACC92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC82AB6F-41DB-4E7A-82B0-AAD553BACC92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF30CD57-0399-4F52-AD96-CD49D067F98B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF30CD57-0399-4F52-AD96-CD49D067F98B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF30CD57-0399-4F52-AD96-CD49D067F98B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF30CD57-0399-4F52-AD96-CD49D067F98B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +73,8 @@ Global
 		{62ECEBCB-6A56-4281-A465-B11A5E3CC10F} = {6B1D0B99-08ED-4B1B-BFB9-A24D5C8628EC}
 		{805BA11C-06DE-4135-9152-26A2DB3B94CD} = {C5B7653D-BBA3-495E-AF0F-068258A00DEB}
 		{AD82B92C-BEAC-448F-8BEC-B0E9FAFB90B6} = {DF7C454C-95CC-4C4B-A2D6-ABADB6F7AE2D}
+		{EC82AB6F-41DB-4E7A-82B0-AAD553BACC92} = {9BC27955-2461-4029-B789-1321A2F73EFF}
+		{BF30CD57-0399-4F52-AD96-CD49D067F98B} = {DAE4CDF1-5F43-4E76-8A02-73DEE16345FF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3993894C-D8F0-4ED6-87A0-B81D75C6B277}
