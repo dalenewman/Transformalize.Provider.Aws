@@ -10,8 +10,7 @@ using Transformalize.Transforms.Aws.Autofac;
 namespace Test.Unit {
 
    /// <summary>
-   /// In order for this test to pass, you have to assume a role prior to starting
-   /// Visual Studio.
+   /// In order for this test to pass, you have to assume a role prior to starting Visual Studio.
    /// </summary>
    [TestClass]
    public class StsIdentity {

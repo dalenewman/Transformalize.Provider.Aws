@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Transformalize.Transform.Aws.Autofac</id>
-    <version>0.8.35-beta</version>
+    <version>0.8.36-beta</version>
     <title>AWS for Transformalize Autofac Module</title>
     <authors>Dale Newman</authors>
     <owners>Dale Newman</owners>
@@ -16,7 +16,7 @@
     <dependencies>
       <group targetFramework="netstandard2.0">
         <dependency id="Transformalize.Container.Autofac" version="0.8.35-beta" />
-        <dependency id="Transformalize.Transform.Aws" version="0.8.35-beta" />
+        <dependency id="Transformalize.Transform.Aws" version="0.8.36-beta" />
         <dependency id="Transformalize.Transform.Json" version="0.8.29-beta" />
       </group>
     </dependencies>

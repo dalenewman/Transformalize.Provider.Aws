@@ -27,9 +27,9 @@ namespace Transformalize.Providers.Aws.CloudWatch.Autofac {
             _process = (Process)builder.Properties["Process"];
          }
 
-         // connections TODO: Write schema reader this
+         // Schema Reader
          foreach (var connection in _process.Connections.Where(c => c.Provider == ProviderName && c.Service == ProviderServiceName)) {
-            builder.Register<ISchemaReader>(ctx => new NullSchemaReader()).Named<ISchemaReader>(connection.Key);
+            builder.Register<ISchemaReader>(ctx => new LogGroupsSchemaReader(ctx.ResolveNamed<IConnectionContext>(connection.Key))).Named<ISchemaReader>(connection.Key);
          }
 
          // Entity input
