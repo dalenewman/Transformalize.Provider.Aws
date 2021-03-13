@@ -22,7 +22,8 @@ namespace Transformalize.Providers.Aws.CloudWatch {
       private Schema Common() {
 
          var schema = new Schema {
-            Connection = _context.Connection
+            Connection = _context.Connection,
+            Entities = new List<Entity>()
          };
 
          var entity = new Entity { Name = "Schema", Input = _context.Connection.Name };
@@ -35,6 +36,8 @@ namespace Transformalize.Providers.Aws.CloudWatch {
             new Field { Name = "retentionInDays", Type = "int" },
             new Field { Name = "storedBytes", Type = "long" }
          };
+
+         schema.Entities.Add(entity);
 
          return schema;
       }
