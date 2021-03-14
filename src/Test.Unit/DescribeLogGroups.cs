@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Autofac;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -10,16 +11,16 @@ using Transformalize.Providers.Console;
 namespace Test.Unit {
 
    /// <summary>
-   /// In order for this test to pass, you have to assume a role prior to starting
-   /// Visual Studio.
+   /// In order for this test to pass, you have to assume a role prior to starting Visual Studio.
    /// </summary>
    [TestClass]
-   public class CloudWatchDescribeLogGroups {
+   public class DescribeLogGroups {
+
       [TestMethod]
-      public void TestMethod1() {
+      public void LogGroupsExist() {
          var cfg = @"<cfg name='test'>
    <connections>
-      <add name='input' provider='aws' service='logs' command='DescribeLogGroups' />
+      <add name='input' provider='aws' service='logs' command='describe-log-groups' />
    </connections>
    <entities>
       <add name='entity'>
@@ -35,11 +36,14 @@ namespace Test.Unit {
       </add>
    </entities>
 </cfg>";
+
+         Environment.SetEnvironmentVariable("AWS_PROFILE", "vlad");
+
          var logger = new ConsoleLogger(LogLevel.Debug);
          using (var outer = new ConfigurationContainer().CreateScope(cfg, logger)) {
             var process = outer.Resolve<Process>();
             using (var inner = new Container(new AwsCloudWatchProviderModule(process)).CreateScope(process, logger)) {
-               
+
                var controller = inner.Resolve<IProcessController>();
                IRow[] rows = controller.Read().ToArray();
 

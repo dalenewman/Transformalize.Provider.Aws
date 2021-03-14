@@ -22,7 +22,7 @@ namespace Transformalize.Providers.Amazon.Connect {
       private Schema Common() {
 
          var schema = new Schema {
-            Connection = _context.Connection, 
+            Connection = _context.Connection,
             Entities = new List<Entity>()
          };
 
@@ -30,13 +30,13 @@ namespace Transformalize.Providers.Amazon.Connect {
          entity.Fields = new List<Field> {
             new Field { Name = "Arn", PrimaryKey = true },
             new Field { Name = "CreatedTime", Type = "datetime" },
-            new Field { Name = "id", Length = "100" },
+            new Field { Name = "Id", Length = "100" },
             new Field { Name = "IdentityManagementType" },
             new Field { Name = "InboundCallsEnabled", Type="bool" },
             new Field { Name = "InstanceAlias", Length="62" },
             new Field { Name = "InstanceStatus" },
             new Field { Name = "OutboundCallsEnabled", Type = "bool" },
-            new Field { Name = "ServiceRole" }
+            new Field { Name = "ServiceRole", Length ="512" } //an ARN
          };
 
          schema.Entities.Add(entity);

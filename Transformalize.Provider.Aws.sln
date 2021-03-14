@@ -18,6 +18,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DF7C454C-95CC-4C4B-A2D6-ABADB6F7AE2D}"
 	ProjectSection(SolutionItems) = preProject
 		readme.md = readme.md
+		test.runsettings = test.runsettings
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{AD82B92C-BEAC-448F-8BEC-B0E9FAFB90B6}"
@@ -40,9 +41,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Provider.Aws
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Provider.Aws.CloudWatch", "src\Transformalize.Provider.Aws.CloudWatch\Transformalize.Provider.Aws.CloudWatch.csproj", "{BF30CD57-0399-4F52-AD96-CD49D067F98B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Provider.Amazon.Connect", "src\Transformalize.Provider.Amazon.Connect\Transformalize.Provider.Amazon.Connect.csproj", "{2E273548-D784-4922-807C-B9970EA235C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Provider.Amazon.Connect", "src\Transformalize.Provider.Amazon.Connect\Transformalize.Provider.Amazon.Connect.csproj", "{2E273548-D784-4922-807C-B9970EA235C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Transformalize.Provider.Amazon.Connect.Autofac", "src\Transformalize.Provider.Amazon.Connect.Autofac\Transformalize.Provider.Amazon.Connect.Autofac.csproj", "{F7A84A0F-90A4-4BF1-A2CF-3AA1D5322301}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Transformalize.Provider.Amazon.Connect.Autofac", "src\Transformalize.Provider.Amazon.Connect.Autofac\Transformalize.Provider.Amazon.Connect.Autofac.csproj", "{F7A84A0F-90A4-4BF1-A2CF-3AA1D5322301}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

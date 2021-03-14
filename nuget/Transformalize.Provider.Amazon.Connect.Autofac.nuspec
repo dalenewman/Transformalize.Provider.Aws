@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <id>Transformalize.Provider.Aws.CloudWatch.Autofac</id>
+    <id>Transformalize.Provider.Amazon.Connect.Autofac</id>
     <version>0.8.38-beta</version>
     <title>Amazon Connect Provider for Transformalize Autofac Module</title>
     <authors>Dale Newman</authors>
