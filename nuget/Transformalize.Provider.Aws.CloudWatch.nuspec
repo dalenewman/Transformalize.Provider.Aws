@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Transformalize.Provider.Aws.CloudWatch</id>
-    <version>0.8.36-beta</version>
+    <version>0.8.38-beta</version>
     <title>AWS CloudWatch Provider for Transformalize</title>
     <authors>Dale Newman</authors>
     <owners>Dale Newman</owners>
@@ -16,7 +16,7 @@
     <tags>etl</tags>
     <dependencies>
       <group targetFramework="netstandard2.0">
-        <dependency id="Transformalize" version="0.8.36-beta" />
+        <dependency id="Transformalize" version="0.8.38-beta" />
         <dependency id="AWSSDK.CloudWatchLogs" version="3.5.0.70" />
       </group>
     </dependencies>

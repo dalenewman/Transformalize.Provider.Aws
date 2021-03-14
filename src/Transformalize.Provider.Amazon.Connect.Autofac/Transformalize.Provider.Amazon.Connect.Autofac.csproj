@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+   <PropertyGroup>
+      <TargetFramework>netstandard2.0</TargetFramework>
+      <RootNamespace>Transformalize.Providers.Amazon.Connect.Autofac</RootNamespace>
+      <AssemblyName>Transformalize.Provider.Amazon.Connect.Autofac</AssemblyName>
+   </PropertyGroup>
+
+   <ItemGroup>
+      <PackageReference Include="Transformalize.Container.Autofac" Version="0.8.35-beta" />
+   </ItemGroup>
+
+   <ItemGroup>
+      <ProjectReference Include="..\Transformalize.Provider.Amazon.Connect\Transformalize.Provider.Amazon.Connect.csproj" />
+   </ItemGroup>
+
+</Project>

@@ -5,16 +5,17 @@ using Transformalize.Context;
 using Transformalize.Contracts;
 using Transformalize.Nulls;
 
-namespace Transformalize.Providers.Aws.CloudWatch.Autofac {
-   public class AwsCloudWatchProviderModule : Module {
+namespace Transformalize.Providers.Amazon.Connect.Autofac {
+   public class AmazonConnectProviderModule : Module {
+
       private Process _process = null;
       public const string ProviderName = "aws";
-      public const string ProviderServiceName = "logs";
+      public const string ProviderServiceName = "connect";
 
-      public AwsCloudWatchProviderModule() {
+      public AmazonConnectProviderModule() {
       }
 
-      public AwsCloudWatchProviderModule(Process process) {
+      public AmazonConnectProviderModule(Process process) {
          _process = process;
       }
 
@@ -29,7 +30,7 @@ namespace Transformalize.Providers.Aws.CloudWatch.Autofac {
 
          // Schema Reader
          foreach (var connection in _process.Connections.Where(c => c.Provider == ProviderName && c.Service == ProviderServiceName)) {
-            builder.Register<ISchemaReader>(ctx => new LogGroupsSchemaReader(ctx.ResolveNamed<IConnectionContext>(connection.Key))).Named<ISchemaReader>(connection.Key);
+            builder.Register<ISchemaReader>(ctx => new InstancesSchemaReader(ctx.ResolveNamed<IConnectionContext>(connection.Key))).Named<ISchemaReader>(connection.Key);
          }
 
          // Entity input
@@ -43,12 +44,12 @@ namespace Transformalize.Providers.Aws.CloudWatch.Autofac {
                builder.RegisterType<NullInputProvider>().Named<IInputProvider>(entity.Key);
 
                // input reader
-               switch (connection.Command.ToLower().Replace("-", string.Empty)) {
-                  case "describeloggroups":
+               switch (connection.Command.ToLower().Replace("-",string.Empty)) {
+                  case "listinstances":
                      builder.Register<IRead>(ctx => {
                         var input = ctx.ResolveNamed<InputContext>(entity.Key);
                         var rowFactory = ctx.ResolveNamed<IRowFactory>(entity.Key, new NamedParameter("capacity", input.RowCapacity));
-                        return new LogGroupsReader(input, rowFactory);
+                        return new InstancesReader(input, rowFactory);
                      }).Named<IRead>(entity.Key);
                      break;
                   default:
