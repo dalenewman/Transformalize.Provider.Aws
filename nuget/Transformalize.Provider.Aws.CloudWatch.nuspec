@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Transformalize.Provider.Aws.CloudWatch</id>
-    <version>0.8.38-beta</version>
+    <version>0.8.39-beta</version>
     <title>AWS CloudWatch Provider for Transformalize</title>
     <authors>Dale Newman</authors>
     <owners>Dale Newman</owners>

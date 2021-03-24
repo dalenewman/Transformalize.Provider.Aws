@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Transformalize.Provider.Amazon.Connect</id>
-    <version>0.8.38-beta</version>
+    <version>0.8.39-beta</version>
     <title>Amazon Connect Provider for Transformalize</title>
     <authors>Dale Newman</authors>
     <owners>Dale Newman</owners>

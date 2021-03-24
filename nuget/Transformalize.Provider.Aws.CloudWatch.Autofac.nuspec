@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Transformalize.Provider.Aws.CloudWatch.Autofac</id>
-    <version>0.8.38-beta</version>
+    <version>0.8.39-beta</version>
     <title>AWS CloudWatch Provider for Transformalize Autofac Module</title>
     <authors>Dale Newman</authors>
     <owners>Dale Newman</owners>
@@ -17,7 +17,7 @@
     <dependencies>
       <group targetFramework="netstandard2.0">
         <dependency id="Transformalize.Container.Autofac" version="0.8.35-beta" />
-        <dependency id="Transformalize.Provider.Aws.CloudWatch" version="0.8.38-beta" />
+        <dependency id="Transformalize.Provider.Aws.CloudWatch" version="0.8.39-beta" />
       </group>
     </dependencies>
   </metadata>

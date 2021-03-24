@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Transformalize.Configuration;
 using Transformalize.Contracts;
 
@@ -12,21 +13,31 @@ namespace Transformalize.Providers.Aws.CloudWatch {
       }
 
       public Schema Read() {
-         return Common();
-      }
-
-      public Schema Read(Entity entity) {
-         return Common();
-      }
-
-      private Schema Common() {
-
          var schema = new Schema {
             Connection = _context.Connection,
             Entities = new List<Entity>()
          };
 
-         var entity = new Entity { Name = "Schema", Input = _context.Connection.Name };
+         foreach (var entity in _context.Process.Entities.Where(e => e.Input == _context.Connection.Name)) {
+            schema.Entities.Add(AddFields(entity));
+         }
+
+         return schema;
+      }
+
+      public Schema Read(Entity entity) {
+         var schema = new Schema {
+            Connection = _context.Connection,
+            Entities = new List<Entity>()
+         };
+
+         schema.Entities.Add(AddFields(entity));
+
+         return schema;
+      }
+
+      private Entity AddFields(Entity entity) {
+
          entity.Fields = new List<Field> {
             new Field { Name = "arn", PrimaryKey = true },
             new Field { Name = "creationTime", Type = "datetime" },
@@ -37,9 +48,9 @@ namespace Transformalize.Providers.Aws.CloudWatch {
             new Field { Name = "storedBytes", Type = "long" }
          };
 
-         schema.Entities.Add(entity);
+         entity.Load();
 
-         return schema;
+         return entity;
       }
    }
 }

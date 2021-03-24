@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Transformalize.Configuration;
 using Transformalize.Contracts;
 
@@ -12,21 +13,30 @@ namespace Transformalize.Providers.Amazon.Connect {
       }
 
       public Schema Read() {
-         return Common();
+         var schema = new Schema {
+            Connection = _context.Connection,
+            Entities = new List<Entity>()
+         };
+         foreach (var entity in _context.Process.Entities.Where(e=> e.Input == _context.Connection.Name)) {
+            schema.Entities.Add(AddFields(entity));
+         }
+         return schema;
       }
 
       public Schema Read(Entity entity) {
-         return Common();
-      }
-
-      private Schema Common() {
 
          var schema = new Schema {
             Connection = _context.Connection,
             Entities = new List<Entity>()
          };
 
-         var entity = new Entity { Name = "Schema", Input = _context.Connection.Name };
+         schema.Entities.Add(AddFields(entity));
+
+         return schema;
+      }
+
+      public Entity AddFields(Entity entity) {
+
          entity.Fields = new List<Field> {
             new Field { Name = "Arn", PrimaryKey = true },
             new Field { Name = "CreatedTime", Type = "datetime" },
@@ -39,9 +49,10 @@ namespace Transformalize.Providers.Amazon.Connect {
             new Field { Name = "ServiceRole", Length ="512" } //an ARN
          };
 
-         schema.Entities.Add(entity);
+         entity.Load();
 
-         return schema;
+         return entity;
       }
+
    }
 }
