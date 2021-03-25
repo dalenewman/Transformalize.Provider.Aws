@@ -4,6 +4,7 @@
       <TargetFramework>netstandard2.0</TargetFramework>
       <RootNamespace>Transformalize.Providers.Amazon.Connect</RootNamespace>
       <AssemblyName>Transformalize.Provider.Amazon.Connect</AssemblyName>
+      <Version>0.8.40-beta</Version>
    </PropertyGroup>
 
    <ItemGroup>

@@ -30,7 +30,7 @@ namespace Transformalize.Providers.Amazon.Connect.Autofac {
 
          // Schema Reader
          foreach (var connection in _process.Connections.Where(c => c.Provider == ProviderName && c.Service == ProviderServiceName)) {
-            builder.Register<ISchemaReader>(ctx => new InstancesSchemaReader(ctx.ResolveNamed<IConnectionContext>(connection.Key))).Named<ISchemaReader>(connection.Key);
+            builder.Register<ISchemaReader>(ctx => new ConnectSchemaReader(ctx.ResolveNamed<IConnectionContext>(connection.Key))).Named<ISchemaReader>(connection.Key);
          }
 
          // Entity input
@@ -50,6 +50,13 @@ namespace Transformalize.Providers.Amazon.Connect.Autofac {
                         var input = ctx.ResolveNamed<InputContext>(entity.Key);
                         var rowFactory = ctx.ResolveNamed<IRowFactory>(entity.Key, new NamedParameter("capacity", input.RowCapacity));
                         return new InstancesReader(input, rowFactory);
+                     }).Named<IRead>(entity.Key);
+                     break;
+                  case "listusers":
+                     builder.Register<IRead>(ctx => {
+                        var input = ctx.ResolveNamed<InputContext>(entity.Key);
+                        var rowFactory = ctx.ResolveNamed<IRowFactory>(entity.Key, new NamedParameter("capacity", input.RowCapacity));
+                        return new UsersReader(input, rowFactory);
                      }).Named<IRead>(entity.Key);
                      break;
                   default:
